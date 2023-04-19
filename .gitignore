@@ -1,0 +1,14 @@
+node_modules
+
+report-junit/
+
+allure-results/
+
+allure-report/
+
+.lighthouseci/
+
+_results_/
+.idea/
+
+.DS_Store
