@@ -39,7 +39,7 @@ Then(/^Ingreso "([^"]*)" como el apellido paterno del asegurado numero "([^"]*)"
 });
 Then(/^Selecciono "([^"]*)" como el parentesco del asegurado numero "([^"]*)"$/, async function (var1,var2) {
     await selectors.inputParentescoAsegurado.click();
-    await selectors.textParentescoAsegurado.selectByIndex(3);
+    await selectors.textParentescoAsegurado.selectByVisibleText(var1);
 });
 Then(/^Ingreso "([^"]*)" como la edad del asegurado numero "([^"]*)"$/, async function (var1,var2) {
     await selectors.inputEdadAsegurado.click();

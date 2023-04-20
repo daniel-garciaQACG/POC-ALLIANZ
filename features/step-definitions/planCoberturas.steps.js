@@ -1,11 +1,18 @@
 const {Then, When} = require('@wdio/cucumber-framework');
-let globalSelectors = require('../pageobjects/planCoberturas.page');
+const globalSelectors = require('../pageobjects/planCoberturas.page');
+const { getPDFUrl, searchForPhraseInPDF } = require('./common.steps');
 const selectors = new globalSelectors.planCoberturas();
 
 
 Then(/^Se muestra el formulario de Cobertura Básica$/, async () => {
     await expect(selectors.formularioCoberturaBasica).toBeExisting();
 });
+
+Then(/^Valido que corresponda el Número de Cotización en el archivo "([^"]*)" en la página (\d+)$/, async (var1, var2) => {
+    const phraseToFind = await $('#P3_ID_COTIZACION_DISPLAY').getText();
+    pdfUrl = getPDFUrl(var1);
+    await searchForPhraseInPDF(pdfUrl, phraseToFind, var2);
+  });
 
 Then(/^Selecciono "([^"]*)" como tipo de plan$/, async function (var1) {
     await selectors.selectPlan.selectByVisibleText(var1);
@@ -38,7 +45,6 @@ Then(/^Selecciono "([^"]*)" como GUA$/, async function (var1) {
 Then(/^Selecciono "([^"]*)" como conducto de cobro$/, async function (var1) {
     await selectors.selectConductoCobro.selectByVisibleText(var1);
 });
-
 
 When(/^Doy clic en el botón Generar estudio$/, async () => {
     await selectors.btnGenerarEstudio.click();

@@ -10,6 +10,10 @@ class planCoberturas extends selectors {
         return $('#camposBasicaContainer');
     }
 
+    get spanNumCotizacion() {
+        return $('#P3_ID_COTIZACION_DISPLAY');
+    }
+
     get selectPlan() {
         return $('#P3_PLAN_MOSTRADO');
     }

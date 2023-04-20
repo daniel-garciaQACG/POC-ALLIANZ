@@ -15,7 +15,6 @@ function getPDFUrl(archivo) {
   
   // Función para cargar el archivo PDF y buscar una palabra en él
 async function searchForPhraseInPDF(pdfUrl, phraseToFind, page) {
-    //const url = getPDFUrl();
     const loadingTask = pdfjsLib.getDocument(pdfUrl);
   
     loadingTask.promise.then(function(pdf) {
@@ -46,3 +45,5 @@ When(/^Regreso a la ventana principal$/, async () => {
   const windowHandles = await browser.getWindowHandles();
   await browser.switchToWindow(windowHandles[0]);
 });
+
+module.exports = {getPDFUrl, searchForPhraseInPDF}

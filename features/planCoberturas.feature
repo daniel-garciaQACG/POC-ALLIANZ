@@ -41,7 +41,8 @@ Antecedentes:
     Y Descargo el PDF generado de Plan de coberturas
     Entonces Espero "3" segundos
     Cuando Leo el archivo "PDFDescargado.pdf"
-    Entonces Valido si se encuentra la frase "MASTER" en la página 1 del archivo
+    Entonces Valido que corresponda el Número de Cotización en el archivo "PDFDescargado.pdf" en la página 1
+    Y Valido si se encuentra la frase "MASTER" en la página 1 del archivo
     Y Valido si se encuentra la frase "$145,000,000" en la página 1 del archivo
     Y Valido si se encuentra la frase "$26,000" en la página 1 del archivo
     Y Valido si se encuentra la frase "CIUDAD DE MÉXICO" en la página 1 del archivo
