@@ -32,7 +32,7 @@ async function searchForPhraseInPDF(pdfUrl, phraseToFind, page) {
 }
 
 
-When(/^Leo el archivo "([^"]*)"$/, async function (var1) {
+Then(/^Abro el archivo "([^"]*)"$/, async function (var1) {
     pdfUrl = getPDFUrl(var1);
 });
 

@@ -3,16 +3,12 @@ let globalSelectors = require('../pageobjects/datosContratante.page');
 const selectors = new globalSelectors.datosContratante();
 
 
-Then(/^Se muestra el formulario de Datos del contratante$/, async function () {
-    // TO DO
+Then(/^Me redirigido a la sección Datos del contratante$/, async function () {
+    await expect(selectors.formularioDatosContratante).toBeExisting();
 });
 
 When(/^Ingreso "([^"]*)" como el RFC del contratante$/, async function (var1) {
     await selectors.inputRFC.setValue(var1 + "\ue004");
-});
-
-When(/^Doy Tab para sincronizar los datos del contratante$/, async function () {
-    //await selectors.inputRFC.setValue("\ue004");
 });
 
 When(/Selecciono en Dirección del titular que "([^"]*)" es igual al del contratante$/, async function (var1)  {

@@ -4,7 +4,7 @@
 Característica: Registrar los datos iniciales
 
 Antecedentes:
-  Dado que me encuentro en la pagina de log-in
+  Dado Que me encuentro en la pagina de log-in
 
 
   Escenario: Registrar los datos del titular
@@ -12,13 +12,13 @@ Antecedentes:
     E Ingreso "pruebaadsol" como mi contraseña
     Y Hago click en el boton "Entrar"
     Entonces Se muestra la página de Allianz
-    Cuando Estoy en la sección Datos iniciales
+    Y Me redirigido a la sección Datos iniciales
     Entonces Ingreso "KARINA" como nombre del tittular
     E Ingreso "SANCHEZ" como apellido paterno del titular
     E Ingreso "ESCOBEDO" como apellido materno del titular
     Y Selecciono "F" en el campo sexo
     E Ingreso "28" como edad del titular
-    Entonces Espero "10" segundos
+    Entonces Espero "3" segundos
     Entonces Agrego a un asegurado
     E Ingreso "LILIA" como el nombre del asegurado numero "1"
     E Ingreso "SANCHEZ" como el apellido paterno del asegurado numero "1"

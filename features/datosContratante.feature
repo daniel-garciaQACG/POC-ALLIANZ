@@ -4,17 +4,20 @@
 Característica: Revisar los datos de pago del contratante
 
 Antecedentes:
-    Dado que me encuentro en la pagina de log-in
+    Dado Que me encuentro en la pagina de log-in
 
   Escenario: Revisar los datos de pago del contratante
-    Cuando Ingreso mis credenciales
+    Entonces Ingreso "oscarg" como mi usuario
+    E Ingreso "pruebaadsol" como mi contraseña
+    Y Hago click en el boton "Entrar"
     Entonces Se muestra la página de Allianz
-    Cuando Estoy en la sección Datos iniciales
+    Y Me redirigido a la sección Datos iniciales
     Entonces Ingreso "KARINA" como nombre del tittular
     E Ingreso "SANCHEZ" como apellido paterno del titular
     E Ingreso "ESCOBEDO" como apellido materno del titular
     Y Selecciono "F" en el campo sexo
     E Ingreso "28" como edad del titular
+    Entonces Espero "3" segundos
     Entonces Agrego a un asegurado
     E Ingreso "LILIA" como el nombre del asegurado numero "1"
     E Ingreso "SANCHEZ" como el apellido paterno del asegurado numero "1"
@@ -23,7 +26,8 @@ Antecedentes:
     E Ingreso "20" como la edad del asegurado numero "1"
     Entonces Doy clic en el botón Guardar cotización
     Y Doy clic en el botón Siguiente
-    Entonces Se muestra el formulario de Cobertura Básica
+    Entonces Debo ser redirigido a la pagina de coberturas
+    Y Debo obtener un Numero de cotizacion
     Y Selecciono "MASTER" como tipo de plan
     Entonces Espero "3" segundos
     Y Selecciono "$145,000,000" como suma
@@ -31,7 +35,7 @@ Antecedentes:
     Y Selecciono "CIUDAD DE MÉXICO" como entidad
     Entonces Espero "3" segundos
     Y Selecciono "GUSTAVO A. MADERO" como ciudad
-    Entonces Espero "3" segundos
+    Entonces Espero "5" segundos
     Y Selecciono "10%" como coaseguro
     Y Selecciono "100%" como GUA
     Y Selecciono "Agente" como conducto de cobro
@@ -39,7 +43,8 @@ Antecedentes:
     Y Doy clic en el botón Generar estudio
     Entonces Espero "5" segundos
     Y Descargo el PDF generado de Plan de coberturas
-    Entonces Espero "5" segundos
+    Entonces Espero "3" segundos
+    Y Abro el archivo "PDFDescargado.pdf"
     Entonces Valido que corresponda el Número de Cotización en el archivo "PDFDescargado.pdf" en la página 1
     Y Valido si se encuentra la frase "MASTER" en la página 1 del archivo
     Y Valido si se encuentra la frase "$145,000,000" en la página 1 del archivo
@@ -55,9 +60,9 @@ Antecedentes:
     Y Doy clic en el botón Guardar cotización 2
     Entonces Espero "3" segundos
     Y Doy clic en el botón Siguiente 2
-    Entonces Se muestra el formulario de Datos del contratante
+    Entonces Espero "5" segundos
+    Y Me redirigido a la sección Datos del contratante
     E Ingreso "SAEK9405289JA" como el RFC del contratante
-    Y Doy Tab para sincronizar los datos del contratante
     Entonces Espero "12" segundos
     Y Selecciono en Dirección del titular que "Si" es igual al del contratante
     E Ingreso "28/05/1994" como fecha de nacimiento del contratante
@@ -65,4 +70,4 @@ Antecedentes:
     Entonces Doy clic en el botón Guardar solicitud
     Entonces Espero "2" segundos
     Y Doy clic en el botón Siguiente 3
-    Entonces Espero "10" segundos
+    Entonces Espero "15" segundos

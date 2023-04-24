@@ -5,8 +5,8 @@
 Característica: Iniciar sesión en MyAllianz 2.0
 
   Escenario: Como usuario, quiero iniciar sesión en MyAllianz 2.0
-    Dado que me encuentro en la pagina de log-in
-    Cuando Ingreso mis credenciales
+    Dado Que me encuentro en la pagina de log-in
+    Entonces Ingreso "oscarg" como mi usuario
+    E Ingreso "pruebaadsol" como mi contraseña
+    Y Hago click en el boton "Entrar"
     Entonces Se muestra la página de Allianz
-    Cuando Leo el archivo "PDFDESCARGADO.pdf"
-    Entonces Valido si se encuentra la frase "MASTER" en la página 1 del archivo
