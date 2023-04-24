@@ -29,7 +29,7 @@ Antecedentes:
     Entonces Debo ser redirigido a la pagina de coberturas
     Y Debo obtener un Numero de cotizacion
     Y Selecciono "MASTER" como tipo de plan
-    Entonces Espero "5" segundos
+    Entonces Espero "10" segundos
     Y Selecciono "$145,000,000" como suma
     Y Selecciono "$26,000" como deducible
     Y Selecciono "CIUDAD DE MÉXICO" como entidad
@@ -63,7 +63,7 @@ Antecedentes:
     Entonces Espero "5" segundos
     Y Me redirigido a la sección Datos del contratante
     E Ingreso "SAEK9405289JA" como el RFC del contratante
-    Entonces Espero "60" segundos
+    Entonces Espero "40" segundos
     Y Selecciono en Dirección del titular que "Si" es igual al del contratante
     E Ingreso "28/05/1994" como fecha de nacimiento del contratante
     E Ingreso "01/01/2003" como fecha de nacimiento del dependiente
