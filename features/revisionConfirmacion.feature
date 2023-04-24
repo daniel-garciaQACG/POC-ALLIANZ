@@ -54,7 +54,7 @@ Antecedentes:
     Y Valido si se encuentra la frase "ZONA I" en la página 1 del archivo
     Y Valido si se encuentra la frase "10%" en la página 1 del archivo
     Y Valido si se encuentra la frase "100%" en la página 1 del archivo
-    Y Valido si se encuentra la frase "Agente" en la página 2 del archivo
+    Y Valido si se encuentra la frase "Agente" en la página 1 del archivo
     Y Valido si se encuentra la frase "$64,380.28" en la página 2 del archivo
     Y Regreso a la ventana principal
     Y Doy clic en el botón Guardar cotización 2
