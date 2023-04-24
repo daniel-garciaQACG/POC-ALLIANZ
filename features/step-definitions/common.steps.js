@@ -25,7 +25,7 @@ async function searchForPhraseInPDF(pdfUrl, phraseToFind, page) {
           const pageContent = textContent.items.map(item => item.str).join(''); // Convertir los elementos a una cadena de texto
           const phraseFound = pageContent.includes(phraseToFind);
           //console.log(`Page ${pageNumber} content: `, textContent.items);
-          assert(phraseFound, `La frase no se encontró`);
+          assert(phraseFound, `La frase ${phraseToFind} no se encontró`);
         });
       });
     });
