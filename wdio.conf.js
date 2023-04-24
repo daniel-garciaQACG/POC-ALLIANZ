@@ -6,12 +6,12 @@ exports.config = {
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-    runner: 'local',
-    /*
+    //runner: 'local',
+    
     hostname: 'localhost',
     port: 4444,
     path: '/',
-    */
+    
     //
     // ==================
     // Specify Test Files
@@ -159,8 +159,8 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
-    //services: ['docker'],
+    //services: ['selenium-standalone'],
+    services: ['docker'],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -171,7 +171,7 @@ exports.config = {
     framework: 'cucumber',
     //
     // The number of times to retry the entire specfile when it fails as a whole
-    // specFileRetries: 1,
+    specFileRetries: 3,
     //
     // Delay in seconds between the spec file retry attempts
     // specFileRetriesDelay: 0,
