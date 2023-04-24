@@ -63,7 +63,7 @@ Antecedentes:
     Entonces Espero "5" segundos
     Y Me redirigido a la sección Datos del contratante
     E Ingreso "SAEK9405289JA" como el RFC del contratante
-    Entonces Espero "20" segundos
+    Entonces Espero "30" segundos
     Y Selecciono en Dirección del titular que "Si" es igual al del contratante
     E Ingreso "28/05/1994" como fecha de nacimiento del contratante
     E Ingreso "01/01/2003" como fecha de nacimiento del dependiente
