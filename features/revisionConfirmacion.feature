@@ -29,7 +29,7 @@ Antecedentes:
     Entonces Debo ser redirigido a la pagina de coberturas
     Y Debo obtener un Numero de cotizacion
     Y Selecciono "MASTER" como tipo de plan
-    Entonces Espero "5" segundos
+    Entonces Espero "10" segundos
     Y Selecciono "$145,000,000" como suma
     Y Selecciono "$26,000" como deducible
     Y Selecciono "CIUDAD DE MÉXICO" como entidad
@@ -42,7 +42,7 @@ Antecedentes:
     Entonces Espero "5" segundos
     Y Doy clic en el botón Generar estudio
     Entonces Espero "5" segundos
-    Y Descargo el PDF generado de Plan de coberturas
+    Y Descargo el PDF generado
     Entonces Espero "3" segundos
     Y Abro el archivo "PDFDescargado.pdf"
     Entonces Valido que corresponda el Número de Cotización en el archivo "PDFDescargado.pdf" en la página 1
@@ -56,6 +56,7 @@ Antecedentes:
     Y Valido si se encuentra la frase "100%" en la página 1 del archivo
     Y Valido si se encuentra la frase "Agente" en la página 1 del archivo
     Y Valido si se encuentra la frase "$64,380.28" en la página 2 del archivo
+    Y Cierro el PDF del navegador
     Y Regreso a la ventana principal
     Y Doy clic en el botón Guardar cotización 2
     Entonces Espero "3" segundos
@@ -71,11 +72,36 @@ Antecedentes:
     Entonces Espero "2" segundos
     Y Doy clic en el botón Siguiente 3
     Entonces Espero "15" segundos
+    Y Doy clic en el botón Acuse de Documentos
+    Entonces Espero "5" segundos
+    Y Descargo el PDF generado
+    Entonces Espero "3" segundos
+    Y Abro el archivo "PDFDescargado.pdf"
+    Entonces Valido que corresponda el Número de Solicitud en el archivo "PDFDescargado.pdf" en la página 1
+    Y Valido si se encuentra la frase "KARINA" en la página 1 del archivo
+    Y Valido si se encuentra la frase "SANCHEZ" en la página 1 del archivo
+    Y Valido si se encuentra la frase "ESCOBEDO" en la página 1 del archivo
+    Y Valido si se encuentra la frase "ATZAYACATL 118 , PORVENIR, 57430" en la página 1 del archivo
+    Y Valido si se encuentra la frase "Sin coberturas adicionales" en la página 2 del archivo
+    Y Valido si se encuentra la frase "30%" en la página 2 del archivo
+    Y Valido si se encuentra la frase "MASTER" en la página 2 del archivo
+    Y Valido si se encuentra la frase "BASICA" en la página 2 del archivo
+    Y Valido si se encuentra la frase "ZONA I" en la página 2 del archivo
+    Y Valido si se encuentra la frase "$145,000,000" en la página 2 del archivo
+    Y Valido si se encuentra la frase "$26,000" en la página 2 del archivo
+    Y Valido si se encuentra la frase "10%" en la página 2 del archivo
+    Y Valido si se encuentra la frase "100%" en la página 2 del archivo
+    Y Valido si se encuentra la frase "16%" en la página 3 del archivo
+    Y Valido si se encuentra la frase "MATRIZ" en la página 3 del archivo
+    Y Valido si se encuentra la frase "009009" en la página 3 del archivo
+    Y Valido si se encuentra la frase "OSCAR GARCIA" en la página 3 del archivo
+    Y Valido si se encuentra la frase "Agente" en la página 3 del archivo
+    Y Valido si se encuentra la frase "Anual" en la página 3 del archivo
+    Y Cierro el PDF del navegador
+    Y Regreso a la ventana principal
     Y Doy clic en el botón Cargar Documentos
     Entonces Espero "15" segundos
     Cuando Selecciono todos los documentos
     Y Subo mi documento
     Y Doy clic en el botón Cargar
     Entonces Espero "5" segundos
-
-

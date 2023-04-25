@@ -17,6 +17,10 @@ class revisionConfirmacion extends selectors{
     get btnCargar() {
         // TO DO
     }
+
+    get btnAcuseDocumentos() {
+        return $('#B53924363439848211');
+    }
 }
 
 module.exports = {selectors:selectors,revisionConfirmacion:revisionConfirmacion}

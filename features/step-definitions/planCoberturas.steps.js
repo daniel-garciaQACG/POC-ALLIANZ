@@ -46,11 +46,6 @@ Then(/^Valido que corresponda el Número de Cotización en el archivo "([^"]*)" 
     await searchForPhraseInPDF(pdfUrl, phraseToFind, var2);
 });
 
-
-When(/^Descargo el PDF generado de Plan de coberturas$/, async () => {
-    await browser.savePDF('./PDFDescargado.pdf');
-});
-
 When(/^Doy clic en el botón Guardar cotización 2$/, async () => {
     await selectors.btnGuardarCotizacion.click();
 });
