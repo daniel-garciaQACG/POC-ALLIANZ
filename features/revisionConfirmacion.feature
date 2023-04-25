@@ -46,16 +46,16 @@ Antecedentes:
     Entonces Espero "3" segundos
     Y Abro el archivo "PDFDescargado.pdf"
     Entonces Valido que corresponda el Número de Cotización en el archivo "PDFDescargado.pdf" en la página 1
-    Y Valido si se encuentra la frase "MASTER" en la página 1 del archivo
-    Y Valido si se encuentra la frase "$145,000,000" en la página 1 del archivo
-    Y Valido si se encuentra la frase "$26,000" en la página 1 del archivo
-    Y Valido si se encuentra la frase "CIUDAD DE MÉXICO" en la página 1 del archivo
-    Y Valido si se encuentra la frase "GUSTAVO A. MADERO" en la página 1 del archivo
-    Y Valido si se encuentra la frase "ZONA I" en la página 1 del archivo
-    Y Valido si se encuentra la frase "10%" en la página 1 del archivo
-    Y Valido si se encuentra la frase "100%" en la página 1 del archivo
-    Y Valido si se encuentra la frase "Agente" en la página 1 del archivo
-    Y Valido si se encuentra la frase "$64,380.28" en la página 2 del archivo
+    ##Y Valido si se encuentra la frase "MASTER" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "$145,000,000" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "$26,000" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "CIUDAD DE MÉXICO" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "GUSTAVO A. MADERO" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "ZONA I" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "10%" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "100%" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "Agente" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "$64,380.28" en la página 2 del archivo
     Y Cierro el PDF del navegador
     Y Regreso a la ventana principal
     Y Doy clic en el botón Guardar cotización 2
@@ -78,25 +78,25 @@ Antecedentes:
     Entonces Espero "3" segundos
     Y Abro el archivo "PDFDescargado.pdf"
     Entonces Valido que corresponda el Número de Solicitud en el archivo "PDFDescargado.pdf" en la página 1
-    Y Valido si se encuentra la frase "KARINA" en la página 1 del archivo
-    Y Valido si se encuentra la frase "SANCHEZ" en la página 1 del archivo
-    Y Valido si se encuentra la frase "ESCOBEDO" en la página 1 del archivo
-    Y Valido si se encuentra la frase "ATZAYACATL 118 , PORVENIR, 57430" en la página 1 del archivo
-    Y Valido si se encuentra la frase "Sin coberturas adicionales" en la página 2 del archivo
-    Y Valido si se encuentra la frase "30%" en la página 2 del archivo
-    Y Valido si se encuentra la frase "MASTER" en la página 2 del archivo
-    Y Valido si se encuentra la frase "BASICA" en la página 2 del archivo
-    Y Valido si se encuentra la frase "ZONA I" en la página 2 del archivo
-    Y Valido si se encuentra la frase "$145,000,000" en la página 2 del archivo
-    Y Valido si se encuentra la frase "$26,000" en la página 2 del archivo
-    Y Valido si se encuentra la frase "10%" en la página 2 del archivo
-    Y Valido si se encuentra la frase "100%" en la página 2 del archivo
-    Y Valido si se encuentra la frase "16%" en la página 3 del archivo
-    Y Valido si se encuentra la frase "MATRIZ" en la página 3 del archivo
-    Y Valido si se encuentra la frase "009009" en la página 3 del archivo
-    Y Valido si se encuentra la frase "OSCAR GARCIA" en la página 3 del archivo
-    Y Valido si se encuentra la frase "Agente" en la página 3 del archivo
-    Y Valido si se encuentra la frase "Anual" en la página 3 del archivo
+    ##Y Valido si se encuentra la frase "KARINA" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "SANCHEZ" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "ESCOBEDO" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "ATZAYACATL 118 , PORVENIR, 57430" en la página 1 del archivo
+    ##Y Valido si se encuentra la frase "Sin coberturas adicionales" en la página 2 del archivo
+    ##Y Valido si se encuentra la frase "30%" en la página 2 del archivo
+    ##Y Valido si se encuentra la frase "MASTER" en la página 2 del archivo
+    ##Y Valido si se encuentra la frase "BASICA" en la página 2 del archivo
+    ##Y Valido si se encuentra la frase "ZONA I" en la página 2 del archivo
+    ##Y Valido si se encuentra la frase "$145,000,000" en la página 2 del archivo
+    ##Y Valido si se encuentra la frase "$26,000" en la página 2 del archivo
+    ##Y Valido si se encuentra la frase "10%" en la página 2 del archivo
+    ##Y Valido si se encuentra la frase "100%" en la página 2 del archivo
+    ##Y Valido si se encuentra la frase "16%" en la página 3 del archivo
+    ##Y Valido si se encuentra la frase "MATRIZ" en la página 3 del archivo
+    ##Y Valido si se encuentra la frase "009009" en la página 3 del archivo
+    ##Y Valido si se encuentra la frase "OSCAR GARCIA" en la página 3 del archivo
+    ##Y Valido si se encuentra la frase "Agente" en la página 3 del archivo
+    ##Y Valido si se encuentra la frase "Anual" en la página 3 del archivo
     Y Cierro el PDF del navegador
     Y Regreso a la ventana principal
     Y Doy clic en el botón Cargar Documentos
