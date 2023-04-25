@@ -38,8 +38,9 @@ Antecedentes:
     Entonces Espero "3" segundos
     Y Selecciono "10%" como coaseguro
     Y Selecciono "100%" como GUA
-    Y Selecciono "Agente" como conducto de cobro
     Entonces Espero "5" segundos
+    Y Selecciono "Agente" como conducto de cobro
+    Entonces Espero "10" segundos
     Y Doy clic en el botón Generar estudio
     Entonces Espero "5" segundos
     Y Descargo el PDF generado
@@ -69,7 +70,7 @@ Antecedentes:
     E Ingreso "28/05/1994" como fecha de nacimiento del contratante
     E Ingreso "01/01/2003" como fecha de nacimiento del dependiente
     Entonces Doy clic en el botón Guardar solicitud
-    Entonces Espero "2" segundos
+    Entonces Espero "20" segundos
     Y Doy clic en el botón Siguiente 3
     Entonces Espero "15" segundos
     Y Doy clic en el botón Acuse de Documentos
@@ -100,8 +101,8 @@ Antecedentes:
     Y Cierro el PDF del navegador
     Y Regreso a la ventana principal
     Y Doy clic en el botón Cargar Documentos
-    Entonces Espero "15" segundos
+    Entonces Espero "20" segundos
     Cuando Selecciono todos los documentos
     Y Subo mi documento
     Y Doy clic en el botón Cargar
-    Entonces Espero "5" segundos
+    Entonces Espero "30" segundos
