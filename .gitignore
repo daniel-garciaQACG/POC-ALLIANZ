@@ -10,3 +10,5 @@ _results_/
 .idea/
 
 .DS_Store
+
+*.pdf
