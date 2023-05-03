@@ -20,6 +20,7 @@
     "@wdio/selenium-standalone-service": "^8.2.3",
     "@wdio/spec-reporter": "^8.1.2",
     "allure-commandline": "^2.20.1",
+    "csv-parser": "^3.0.0",
     "dotenv": "^16.0.3",
     "pdfjs-dist": "^3.4.120",
     "wdio-docker-service": "^3.2.1",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "chai": "^4.3.7",
+    "ejs": "^3.1.9",
     "node-pdjs": "^1.0.0-node.0.1.1",
     "wdio-video-reporter": "^3.5.0"
   }
