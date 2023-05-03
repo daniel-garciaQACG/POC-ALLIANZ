@@ -4,26 +4,40 @@ let globalSelectors = require('../pageobjects/login.page');
 const loginPageClass = globalSelectors.loginPage;
 const selectors = new loginPageClass();
 
+let firstTime = true;
+
 Given(/^Que me encuentro en la pagina de log-in$/, () => {
-    browser.url('https://portal.myallianz.com.mx/web/guest/myallianz');
-    browser.maximizeWindow();
+    if (firstTime) {
+        browser.url('https://portal.myallianz.com.mx/web/guest/myallianz');
+        browser.maximizeWindow();
+    }
 });
 
 Then(/^Ingreso "([^"]*)" como mi usuario$/, async function (var1) {
-    await selectors.inputUsuario.setValue(var1);
+    if (firstTime) {
+        await selectors.inputUsuario.setValue(var1);
+    }
 });
 
 Then(/^Ingreso "([^"]*)" como mi contraseña$/, async function (var1) {
-    await selectors.inputClaveAcceso.setValue(var1);
+    if (firstTime) {
+        await selectors.inputClaveAcceso.setValue(var1);
+    }
 });
 
 
 Then(/^Hago click en el boton "Entrar"$/, async function () {
-    await selectors.btnLogin.click();
+    if (firstTime) {
+        await selectors.btnLogin.click();
+    }
 });
 
 
 Then(/^Se muestra la página de Allianz$/, async () => {
-    await expect(selectors.imgLogo).toBeExisting();
+    if (firstTime) {
+        await expect(selectors.imgLogo).toBeExisting();
+        
+        firstTime = false;
+    }
 });
 

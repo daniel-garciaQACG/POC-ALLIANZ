@@ -1,32 +1,41 @@
 const {Then, When} = require('@wdio/cucumber-framework');
 let globalSelectors = require('../pageobjects/datosIniciales.page');
+const fs = require('fs');
+const csv = require('csv-parser');
+const ejs = require('ejs');
 const selectors = new globalSelectors.datosIniciales();
+
+let data = [];
+let firstTime = true;
+let executionNumber = 0;
+
+
 
 Then(/^Me redirigido a la sección Datos iniciales$/, async () => {
     await browser.url('http://azteslnxapexapp04.myallianz.com.mx:8080/ords/f?p=100:2');
 });
 
-Then(/^Ingreso "([^"]*)" como nombre del tittular$/, async function (var1) {
-    await selectors.inputNombre.setValue(var1);
+Then(/^Ingreso "([^"]*)" como nombre del titular$/, async function (nombre) {
+    await selectors.inputNombre.setValue(nombre);
 });
 
-Then(/^Ingreso "([^"]*)" como apellido paterno del titular$/, async function (var1) {
-    await selectors.inputApellidoPaterno.setValue(var1);
+Then(/^Ingreso "([^"]*)" como apellido paterno del titular$/, async function (apellidoPaterno) {
+    await selectors.inputApellidoPaterno.setValue(apellidoPaterno);
 });
 
-Then(/^Ingreso "([^"]*)" como apellido materno del titular$/, async function (var1) {
-    await selectors.inputApellidoMaterno.setValue(var1);
+Then(/^Ingreso "([^"]*)" como apellido materno del titular$/, async function (apellidoMaterno) {
+    await selectors.inputApellidoMaterno.setValue(apellidoMaterno);
 });
-Then(/^Selecciono "([^"]*)" en el campo sexo$/, async function (var1) {
-    if (var1 === "F"){
+Then(/^Selecciono "([^"]*)" en el campo sexo$/, async function (sexo) {
+    if (sexo === "F"){
         await selectors.radioSexoF.click();
     }else{
         await selectors.radioSexoM.click();
     }
 });
 
-Then(/^Ingreso "([^"]*)" como edad del titular$/, async function (var1) {
-    await selectors.inputEdad.setValue(var1);
+Then(/^Ingreso "([^"]*)" como edad del titular$/, async function (edad) {
+    await selectors.inputEdad.setValue(edad);
 });
 
 Then(/^Agrego a un asegurado$/, async function () {
@@ -34,30 +43,35 @@ Then(/^Agrego a un asegurado$/, async function () {
 
 });
 
-Then(/^Ingreso "([^"]*)" como el nombre del asegurado numero "([^"]*)"$/, async function (var1,var2) {
+Then(/^Ingreso el nombre del asegurado numero "([^"]*)"$/, async function (var1) {
     await selectors.inputNombreAsegurado.click();
-    await selectors.textNombreAsegurado.setValue(var1);
+    const nombreAsegurado = data[executionNumber].nombre;
+    await selectors.textNombreAsegurado.setValue(nombreAsegurado);
 
 });
 
-Then(/^Ingreso "([^"]*)" como el apellido paterno del asegurado numero "([^"]*)"$/, async function (var1,var2) {
+Then(/^Ingreso el apellido paterno del asegurado numero "([^"]*)"$/, async function (var1) {
     await selectors.inputApellidoPaternoAsegurado.click();
-    await selectors.textApellidoPaternoAsegurado.setValue(var1);
+    const apellidoPaternoAsegurado = data[executionNumber].apellidoPaterno;
+    await selectors.textApellidoPaternoAsegurado.setValue(apellidoPaternoAsegurado);
 });
 
-Then(/^Selecciono "([^"]*)" como el parentesco del asegurado numero "([^"]*)"$/, async function (var1,var2) {
-    await selectors.inputParentescoAsegurado.click();
-    await selectors.textParentescoAsegurado.selectByVisibleText(var1);
-});
-
-Then(/^Ingreso "([^"]*)" como la edad del asegurado numero "([^"]*)"$/, async function (var1,var2) {
-    await selectors.inputEdadAsegurado.click();
-    await selectors.textEdadAsegurado.setValue(var1);
-});
-
-Then(/^Ingreso "([^"]*)" como el apellido materno del asegurado numero "([^"]*)"$/, async function (var1,var2) {
+Then(/^Ingreso el apellido materno del asegurado numero "([^"]*)"$/, async function (var1) {
     await selectors.inputApellidoMaternoAsegurado.click();
-    await selectors.textApellidoMaternoAsegurado.setValue(var1);
+    const apellidoMaternoAsegurado = data[executionNumber].apellidoMaterno;
+    await selectors.textApellidoMaternoAsegurado.setValue(apellidoMaternoAsegurado);
+});
+
+Then(/^Selecciono el parentesco del asegurado numero "([^"]*)"$/, async function (var1) {
+    await selectors.inputParentescoAsegurado.click();
+    const parentescoAsegurado = data[executionNumber].parentesco;
+    await selectors.textParentescoAsegurado.selectByVisibleText(parentescoAsegurado);
+});
+
+Then(/^Ingreso la edad del asegurado numero "([^"]*)"$/, async function (var1) {
+    await selectors.inputEdadAsegurado.click();
+    const edadAsegurado = data[executionNumber].edad;
+    await selectors.textEdadAsegurado.setValue(edadAsegurado);
 });
 
 Then(/^Doy clic en el botón Guardar cotización$/, async function () {
@@ -76,4 +90,22 @@ Then(/^Debo ser redirigido a la pagina de coberturas$/, async function () {
 Then(/^Debo obtener un Numero de cotizacion$/, async function () {
     console.log(selectors.nCotizacion.getText())
     await expect(selectors.nCotizacion).toBeExisting()
+
+    executionNumber += 1;
+});
+
+Then(/^Leo el archivo csv$/, async function () {
+    if (firstTime) {
+        fs.createReadStream('./Asegurados.csv')
+        .pipe(csv())
+        .on('data', (row) => {
+            data.push(row);
+        })
+        .on('end', () => {
+            console.log('Datos cargados:');
+            console.log(data);
+        });
+
+        firstTime = false;
+    }
 });
