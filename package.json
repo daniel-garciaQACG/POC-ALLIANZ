@@ -6,6 +6,7 @@
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js",
     "start": "npm run",
+    "pretest": "node scripts/generarTabla.js",
     "test": "wdio ./wdio.conf.js --cucumberOpts.tagExpression"
   },
   "author": "Daniel Morales",

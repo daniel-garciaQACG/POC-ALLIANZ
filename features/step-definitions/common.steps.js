@@ -1,5 +1,4 @@
 const {Then, When} = require('@wdio/cucumber-framework');
-const helper = require('../helpers/main.helper');
 const { assert } = require('chai');
 const pdfjsLib = require('pdfjs-dist');
 let pdfUrl;

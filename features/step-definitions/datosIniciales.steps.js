@@ -1,8 +1,7 @@
-const {Then, When} = require('@wdio/cucumber-framework');
+const {Then} = require('@wdio/cucumber-framework');
 let globalSelectors = require('../pageobjects/datosIniciales.page');
 const fs = require('fs');
 const csv = require('csv-parser');
-const ejs = require('ejs');
 const selectors = new globalSelectors.datosIniciales();
 
 let data = [];
